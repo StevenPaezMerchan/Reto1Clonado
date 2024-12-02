@@ -223,6 +223,12 @@ public class App {
                 System.out.println("| Available fuel: " + totalFuel);
                 totalOxygen = totalOxygen / 2;
                 System.out.println("| Available oxygen: " + totalOxygen);
+            }else if (progress == 100) {
+                System.out.println("| We have completed the journey.");
+                totalFuel = totalFuel / 2;
+                System.out.println("| Available fuel: " + totalFuel);
+                totalOxygen = totalOxygen / 2;
+                System.out.println("| Available oxygen: " + totalOxygen); 
             }
             if (number == 3) {// Realiza un evento aleatorio en problabilidad de 30%
                 launchEvent(number);
@@ -240,7 +246,7 @@ public class App {
         }
         System.out.println("| Successful arrival on the planet " + planets[choosePlanet]);
         System.out.println("| Arrival, available fuel " + totalFuel + " Liters");
-        System.out.println("| Arrival, available fuel " + totalOxygen + "Units");
+        System.out.println("| Arrival, available fuel " + totalOxygen + " Units");
     }
 
     // Metodos auxiliares
@@ -257,9 +263,9 @@ public class App {
             if (option == 1) {
 
                 System.out.println("| spaceship repaired, we have fuel permission and oxygen");
-                totalFuel = totalFuel - 5000;
+                totalFuel = totalFuel - 1010550000;
                 System.out.println("| Available fuel: " + totalFuel + " Liters");
-                totalOxygen = totalOxygen - 5000;
+                totalOxygen = totalOxygen - 1010550000;
                 System.out.println("| Available oxygen: " + totalOxygen + " Units");
 
             } else if (option == 2) {
@@ -279,18 +285,18 @@ public class App {
             if (option == 1) {
 
                 System.out.println("| Establishing new route to destination, updating resources");
-                totalFuel = totalFuel - 55000;
+                totalFuel = totalFuel - 555550000;
                 System.out.println("| Available fuel: " + totalFuel + " Liters");
-                totalOxygen = totalOxygen - 55000;
+                totalOxygen = totalOxygen - 555550000;
                 System.out.println("| Available oxygen: " + totalOxygen + " Units");
 
             } else if (option == 2) {
 
                 System.out.println("| calculating distances from meteorites");
                 System.out.println("| establishing positions to avoid them");
-                totalFuel = totalFuel - 105000;
+                totalFuel = totalFuel - 525105000;
                 System.out.println("| Available fuel: " + totalFuel + " Liters");
-                totalOxygen = totalOxygen - 105000;
+                totalOxygen = totalOxygen - 525105000;
                 System.out.println("| Available oxygen: " + totalOxygen + " Units");
 
             } else {
@@ -308,19 +314,16 @@ public class App {
             if (option == 1) {
 
                 System.out.println("| Establishing new route to destination, updating resources");
-                totalFuel = totalFuel - 1055000;
+                totalFuel = totalFuel - 999999999;
                 System.out.println("| Available fuel: " + totalFuel + " Liters");
-                totalOxygen = totalOxygen - 10555000;
+                totalOxygen = totalOxygen - 999999999;
                 System.out.println("| Available oxygen: " + totalOxygen + " Units");
 
             } else if (option == 2) {
 
-                System.out.println("| calculating distances from meteorites");
-                System.out.println("| establishing positions to avoid them");
-                totalFuel = totalFuel - 105000;
-                System.out.println("| Available fuel: " + totalFuel + " Liters");
-                totalOxygen = totalOxygen - 105000;
-                System.out.println("| Available oxygen: " + totalOxygen + " Units");
+                System.out.println("| We have lost control of the ship!");
+                System.out.println("| END OF PROGRAM!");
+                System.exit(5);
 
             } else {
                 System.err.println("| Invalid option");
