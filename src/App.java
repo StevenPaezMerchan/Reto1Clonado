@@ -1,0 +1,260 @@
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class App {
+
+    // Elementos necesarios para todas las acciones en los metodos.
+    static Scanner scanner = new Scanner(System.in);
+    static int option;
+    static String[] planets = { "Mercury", "Venus", "Mars", "Jupiter", "Saturn" };
+    static double[] distance = { 91000000.0, 61000000.0, 124000000.0, 588000000.0, 1345.0};// distancia en millones de kilometros
+    static String[] information ={"Solid, rocky planet\n| *Closest planet to the sun \n| *the smallest planet in the Solar System. \n| *Temperature from -180°C to +430°C. \n| *No atmosphere or water. "
+    ,"Second planet from the Sun\n| *Similar size and structure to Earth\n| *Surface temperature around 465°C\n| *No moons\n| *Thick atmosphere of carbon dioxide.",
+    "Four planet from the Sun\n| *Known as the 'Red Planet'\n| *Temperature averages -60°C\n| *Two small moons\n| *Evidence of past water",
+    "Fifth planet from the Sun\n| *Largest planet in the Solar System\n| *Gas giant with mostly hydrogen and helium\n| *Has 79 known moons\n| *Strong magnetic field\n| *Famous for the Great Red Spot(a massive strom)",
+    "Sixth planet form the Sun\n| *Known for its prominent ring system\n| *Gas giant, mainly hydrogen and helium\n| *Second-largest planet in the Solar System\n| *Has 83 known moons\n| *No solid surface"};
+   
+    static String[] ships = { "Mother ship", "Interplanetary ship", "Spaceship", "Alien ship", "SpaceF5Z"};
+    static double[] shipSpeed = { 200000.0, 280000.0, 99000.0, 800000.0, 250000.0 };
+    static double[] fuelConsumption = {1000, 1800, 800, 3000, 1500};// consumo de combustible por cada millon de kilometros
+    static int choosePlanet;// indica la posicion del planeta seleccionado en el arreglo de planetas
+    static int chooseship;// indica la posicion de la nave seleccionado en el arreglo de naves
+    
+    public static void main(String[] args) throws Exception {
+        starSimulation();
+        /*welcome();
+        int option;
+        do {
+            showMenu();
+            option = scanner.nextInt();
+            
+            switch (option) {
+                case 1:
+                    selectPlanets();
+                    break;
+                case 2:
+                    selectShip();
+                    break;
+                case 3:
+                    calculateResources();
+                    break;
+                case 4:
+                    starSimulation();
+                    break;
+                case 5:
+                    System.out.println("End of program!");
+                    break;
+                default:
+                    System.err.println("Invalid option!!");
+                    break;
+            }
+            if (option !=5) {
+                pressEnter(scanner);
+            }
+            scanner.nextLine();
+        } while (option != 5);*/
+        
+    }
+
+    public static void welcome() {
+
+        System.out.println(" ========================================= ");
+        System.out.println("|                                         |");
+        System.out.println("|  W E L C O M E                          |");
+        System.out.println("|               T O  T H E                |");
+        System.out.println("|                         J O U R N E Y   |");
+        System.out.println("|                                         |");
+        System.out.println("|  F A S T E N  Y O U R  S E A T B E L T  |");
+        System.out.println("|                 |                       |");
+        System.out.println("|             -/--  ----                  |");
+        System.out.println("|            *  __|__   *                 |");
+        System.out.println("|           *            *                |");
+        System.out.println("|       ---------(_)----------            |");
+        System.out.println("|          *              *               |");
+        System.out.println("|         |  *         *  |               |");
+        System.out.println("|           |   ° ° °  |                  |");
+        System.out.println("|                 |                       |");
+        System.out.println(" ========================================= ");
+    }
+
+    public static void showMenu() {
+
+        System.out.println("+=============== MAIN MENU ===============+");
+        System.out.println("| 1. Select your destination planet       |");
+        System.out.println("| 2. Select a ship                        |");
+        System.out.println("| 3. Calculate resources                  |");
+        System.out.println("| 4. Star flight simulation               |");
+        System.out.println("| 5. Exit the program                     |");
+        System.out.println("| Please, choose an option                |");
+        System.out.println("+=========================================+");
+        System.out.print("-> ");
+    }
+
+    public static void selectPlanets() {
+
+        System.out.println("+================= Planets ===============+");
+        printSelectPlanets();
+        System.out.println("+=========================================+");
+        System.out.print("->");
+    }
+
+    public static void printSelectPlanets(){
+
+        for (int i = 0; i < planets.length; i++) {
+            System.out.println("| "+(i+1)+ ". "+ planets[i]);
+        }
+        System.out.println("| Select your destination planet");
+        System.out.println("+=========================================+");
+        System.out.print("-> ");
+        int select = scanner.nextInt();
+        if (select > 0 && select <= planets.length) {
+            System.out.println("+=========================================+");
+            System.out.println("| Your destination is: "+planets[select-1]);
+            choosePlanet = select-1;
+        }else{
+            System.err.println("Invalid option, please, try again!");
+        }
+    }
+
+    public static void printPlanetInformation(){
+
+        switch (choosePlanet) {
+            case 1:
+                System.out.println("+================ Information ============+");
+                printPlanetData(option,information);
+                calculateTime(option);
+                System.out.println("+=========================================+");
+                break;
+            case 2:
+                System.out.println("+================ Information ============+");
+                printPlanetData(option,information);
+                calculateTime(option);
+                System.out.println("+=========================================+");
+                break;
+            case 3:
+                System.out.println("+================ Information ============+");
+                printPlanetData(option, information);
+                calculateTime(option);
+                System.out.println("+=========================================+");
+                break;
+            case 4:
+                System.out.println("+================ Information ============+");
+                printPlanetData(option, information);
+                calculateTime(option);
+                System.out.println("+=========================================+");
+                break;
+            case 5:
+                System.out.println("+================ Information ============+");
+                printPlanetData(option, information);
+                calculateTime(option);
+                System.out.println("+=========================================+");
+                break;
+            default:
+                System.err.println("Invalid option");
+                break;
+        }
+    } 
+
+    
+    public static void selectShip() {
+        System.out.println("+=================== Ships ==================+");
+        printSelectedShip();
+        System.out.println("+============================================+");
+    }
+
+    public static void printSelectedShip(){
+       
+        for (int i = 0; i < ships.length; i++) {
+            System.out.println("| "+(i+1)+". "+ships[i]+ "- Velocidad: "+ shipSpeed[i]);
+        }
+        System.out.println("| Select Ship: ");
+        System.out.println("+============================================+");
+        System.out.print("-> ");
+        int select = scanner.nextInt();
+        if (select > 0 && select <= ships.length) {
+            System.out.println("+============================================+");
+            System.out.println("| You ships is: "+ ships[select-1]);
+            chooseship = select-1;
+        }else{
+            System.err.println("Invalid selection, try again!");;
+        }
+    }
+
+    public static void calculateTime(int option) {
+
+        double time = distance[option-1] / shipSpeed[option-1];
+        double days = time / 24;
+        
+        System.out.printf("| Space travel time: %.2f hours\n| It would be %.2f days of travel.\n",time,days);
+        
+    }
+
+    public static void calculateResources() {
+
+        double oxygen = distance[choosePlanet] * 100; //por cada millon de kilometros, se necesita 100 unidades de oxigeno
+        double fuel =  fuelConsumption[chooseship]; // Litros por cada millon de kilometro
+        double totalFuel = fuel * distance[choosePlanet];// litros para el trayecto
+        System.out.println("+=============== Resources ===============+");
+        System.out.println("| Units of oxygen required is: " + oxygen);
+        System.out.println("| Fuel needed is: " + fuel +" liters/kilometer.\n| Total fuel required: "+totalFuel +" liters");
+        System.out.println("+=========================================+");
+    }
+
+    public static void starSimulation(){
+
+        System.out.println("+========= Star flight simulation ==========+");
+        Random random = new Random();
+        for (int progress = 0; progress <= 100 ; progress+=20) {
+            System.out.println(progress + "%  Progress ");
+            if (progress == 50) {
+                System.out.println("We have reached the halfway point of the trip.");
+                
+            }
+            if (random.nextInt(10) < 3) {// Realiza un evento aleatorio en problabilidad de 30%
+                System.out.println("We are presenting an unexpected event.");
+                
+            }
+            try{
+                Thread.sleep(500);
+            }catch(InterruptedException e){
+                System.err.println("Simulation error");
+            }   
+        }
+        System.out.println("Successful arrival on the planet");
+    }
+    // Metodos auxiliares
+    public static void printArrayS(String[] arreglo) {
+
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.print(arreglo[i] + " - ");
+        }
+        System.out.println();
+    }
+
+    public static void printArrayD(double[] arreglo) {
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.print(arreglo[i] + " - ");
+        }
+        System.out.println();
+    }
+
+    public static void launchEvent() {
+
+    }
+    public static void printPlanetData(int position, String[] info){
+        System.out.println("| The planet: " + planets[position-1] + "\n| Distance: "
+        + distance[position-1]+"km. "+"\n| Basic information: "+information[position-1]);
+    }
+
+    public static void printAllPlanets(){
+        for (int i = 0; i < planets.length; i++) {
+           // printPlanetData(i);
+        }
+    }
+
+    public static void pressEnter(Scanner scanner){
+        System.out.println("Press enter to continue");
+        scanner.nextLine();
+    }
+}
