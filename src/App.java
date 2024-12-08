@@ -4,25 +4,26 @@ import java.util.Scanner;
 
 public class App {
 
+    //Variables globales
     // Elementos necesarios para todas las acciones en los metodos.
+    // Planetas, distancia, informacion
     static Scanner scanner = new Scanner(System.in);
-    static int option;
+    //static int option;
     static String[] planets = { "Mercury", "Venus", "Mars", "Jupiter", "Saturn" };
-    static double[] distance = { 91000000.0, 61000000.0, 124000000.0, 588000000.0, 1345.0 };// distancia en millones de kilometros
+    static double[] distance = { 91000000.0, 61000000.0, 124000000.0, 588000000.0, 1345000000.0 };// distancia en millones de kilometros
     static String[] information = {"Solid, rocky planet\n| *Closest planet to the sun \n| *the smallest planet in the Solar System. \n| *Temperature from -180°C to +430°C. \n| *No atmosphere or water. ",
     "Second planet from the Sun\n| *Similar size and structure to Earth\n| *Surface temperature around 465°C\n| *No moons\n| *Thick atmosphere of carbon dioxide.",
     "Four planet from the Sun\n| *Known as the 'Red Planet'\n| *Temperature averages -60°C\n| *Two small moons\n| *Evidence of past water",
     "Fifth planet from the Sun\n| *Largest planet in the Solar System\n| *Gas giant with mostly hydrogen and helium\n| *Has 79 known moons\n| *Strong magnetic field\n| *Famous for the Great Red Spot(a massive strom)",
     "Sixth planet form the Sun\n| *Known for its prominent ring system\n| *Gas giant, mainly hydrogen and helium\n| *Second-largest planet in the Solar System\n| *Has 83 known moons\n| *No solid surface" };
-
-    static String[] ships = { "Mother ship", "Interplanetary ship", "Spaceship", "Alien ship", "SpaceF5Z" };
-    static double[] shipSpeed = { 200000.0, 280000.0, 99000.0, 800000.0, 250000.0 };
-    static double[] fuelConsumption = { 1000, 1800, 800, 3000, 1500 };// consumo de combustible por cada millon de
-                                                                      // kilometros
+    
+    static String[] ships = { "Mother ship", "Interplanetary ship", "Spaceship", "Alien ship", "SpaceF5Z" };//naves
+    static double[] shipSpeed = { 200000.0, 280000.0, 99000.0, 800000.0, 250000.0 };//Velocidades
+    static double[] fuelConsumption = { 1000, 1800, 800, 3000, 1500 };// consumo de combustible por cada millon de kilometros
     static int choosePlanet;// indica la posicion del planeta seleccionado en el arreglo de planetas
     static int chooseship;// indica la posicion de la nave seleccionado en el arreglo de naves
-    static double totalFuel;// variable total de combistible para cambiar en el trayecto
-    static double totalOxygen;
+    static double totalFuel;// variable total de combustible para cambiar en el trayecto
+    static double totalOxygen;// variable total de oxygeno para cambiar en el trayecto
     static String end = "██████╗ ███╗   ██╗   ███████║\n" +
                         "██╔══╗╗ ████╗  ██║╚══██╔══╝ █║\n" +
                         "██████║ ██╔██╗ ██║   ██║     █║\n" +
@@ -71,7 +72,7 @@ public class App {
         } while (option != 6);
 
     }
-
+    // Metodo para dar bienvenida al programa
     public static void welcome() {
 
         System.out.println(" ========================================= ");
@@ -92,7 +93,7 @@ public class App {
         System.out.println("|                 |                       |");
         System.out.println(" ========================================= ");
     }
-
+    // Metodo para mostrar el menu del programa
     public static void showMenu() {
 
         System.out.println("+=============== MAIN MENU ===============+");
@@ -106,7 +107,7 @@ public class App {
         System.out.println("+=========================================+");
         System.out.print("-> ");
     }
-
+    // Metodo para mostar el planeta seleccionado 
     public static void selectPlanets() {
         
         System.out.println("+================= Planets ===============+");
@@ -114,7 +115,7 @@ public class App {
         System.out.println("+=========================================+");
         System.out.print("->");
     }
-
+    // Metodo para imprimir y seleccionar planeta
     public static void printSelectPlanets() {
 
         for (int i = 0; i < planets.length; i++) {
@@ -132,52 +133,52 @@ public class App {
             System.err.println("Invalid option, please, try again!");
         }
     }
-
+    // Metodo para mostar la informacion basica del planeta 
     public static void printPlanetInformation() {
             
         switch (choosePlanet) {
             case 1:
-                System.out.println("+================ Information ============+");
+                System.out.println("+=================== Information ===============+");
                 printPlanetData();
-                calculateTime(option);
-                System.out.println("+=========================================+");
+                calculateTime();
+                System.out.println("+===============================================+");
                 break;
             case 2:
-                System.out.println("+================ Information ============+");
+                System.out.println("+=================== Information ===============+");
                 printPlanetData();
-                calculateTime(option);
-                System.out.println("+=========================================+");
+                calculateTime();
+                System.out.println("+===============================================+");
                 break;
             case 3:
-                System.out.println("+================ Information ============+");
+                System.out.println("+=================== Information ===============+");
                 printPlanetData();
-                calculateTime(option);
-                System.out.println("+=========================================+");
+                calculateTime();
+                System.out.println("+===============================================+");
                 break;
             case 4:
-                System.out.println("+================ Information ============+");
+                System.out.println("+=================== Information ===============+");
                 printPlanetData();
-                calculateTime(option);
-                System.out.println("+=========================================+");
+                calculateTime();
+                System.out.println("+===============================================+");
                 break;
             case 5:
-                System.out.println("+================ Information ============+");
+                System.out.println("+=================== Information ===============+");
                 printPlanetData();
-                calculateTime(option);
-                System.out.println("+=========================================+");
+                calculateTime();
+                System.out.println("+=================== Information ===============+");
                 break;
             default:
-                System.err.println("Invalid option");
+                System.err.println("Invalid option*");
                 break;
         }
     }
-
+    // Metodo para mostar la nave seleccionada
     public static void selectShip() {
         System.out.println("+=================== Ships ==================+");
         printSelectedShip();
         System.out.println("+============================================+");
     }
-
+    // Metodo para imprimir y seleccionar la nave del viaje
     public static void printSelectedShip() {
 
         for (int i = 0; i < ships.length; i++) {
@@ -196,14 +197,14 @@ public class App {
             ;
         }
     }
-
-    public static void calculateTime(int option) {
+    // Metodo para calcular el tiempo en horas y dias del viaje
+    public static void calculateTime() {
 
         double time = distance[choosePlanet] / shipSpeed[chooseship];
         double days = time / 24;
         System.out.printf("| Space travel time: %.2f hours\n| It would be %.2f days of travel.\n", time, days);
     }
-
+    // Metodo para calcular recursos del viaje
     public static void calculateResources() {
 
         double oxygen = distance[choosePlanet] * 100; // por cada millon de kilometros, se necesita 100 unidades de
@@ -211,16 +212,16 @@ public class App {
         double fuel = fuelConsumption[chooseship]; // Litros por cada millon de kilometro
         totalFuel = fuel * distance[choosePlanet];// litros para el trayecto
         System.out.println("+=============== Resources ===============+");
-        System.out.println("| Units of oxygen required is: " + oxygen);
+        System.out.println("| Units of oxygen required is: " + oxygen );
         System.out.println(
                 "| Fuel needed is: " + fuel + " liters/kilometer.\n| Total fuel required: " + totalFuel + " liters");
-        System.out.println("| Equipped resources on the trip");
+        System.out.println("| Equipped resources on the trip ");
         System.out.println("+=========================================+");
     }
-
+    // Metodo para iniciar la simulacion
     public static void starSimulation() {
 
-        System.out.println("+========= Star flight simulation ==========+");
+        System.out.println("+================= Star flight simulation =================+");
         Random random = new Random();
         for (int progress = 0; progress <= 100; progress += 10) {
             System.out.println("| " + progress + "%  Progress ");
@@ -256,6 +257,7 @@ public class App {
     }
 
     // Metodos auxiliares
+    // Metodo para lanzar los eventos en el viaje
     public static void launchEvent(int number) {
 
         if (number == 1) {
@@ -336,13 +338,13 @@ public class App {
             }
         }
     }
-
+    //Metodo para imprimir informacion de los planetas
     public static void printPlanetData() {
         
         System.out.println("| The planet: " + planets[choosePlanet] + "\n| Distance: "
                 + distance[choosePlanet] + "km. " + "\n| Basic information: " + information[choosePlanet]);
     }
-
+    //Metodo para presionar espcacio en cada interaccion 
     public static void pressEnter(Scanner scanner) {
         System.out.println("Press enter to continue");
         scanner.nextLine();
