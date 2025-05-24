@@ -56,14 +56,7 @@ public class App {
                     starSimulation();
                     break;
                 case 6:
-                    System.out.println(end);
-                    System.out.println("+==============================+");
-                    System.out.println("| E N D  OF  T H E  T R I P !  |");
-                    System.out.println("|                              |");
-                    System.out.println("| Thank you for your visit!    |");
-                    System.out.println("|                              |");
-                    System.out.println("| E N D  O f  P R O G R A M !! |");
-                    System.out.println("+==============================+");
+                    printEnd();
                     break;
                 default:
                     System.err.println("Invalid option, please, try again");
@@ -352,5 +345,17 @@ public class App {
     public static void pressEnter(Scanner scanner) {
         System.out.println("Press enter to continue");
         scanner.nextLine();
+    }
+
+    //Metodo para imprimir el final del programa
+    public static void printEnd() {
+        System.out.println(end);
+        System.out.println("+==============================+");
+        System.out.println("| E N D  OF  T H E  T R I P !  |");
+        System.out.println("|                              |");
+        System.out.println("| Thank you for your visit!    |");
+        System.out.println("|                              |");
+        System.out.println("| E N D  O f  P R O G R A M !! |");
+        System.out.println("+==============================+");
     }
 }
