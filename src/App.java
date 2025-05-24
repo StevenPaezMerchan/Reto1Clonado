@@ -24,11 +24,11 @@ public class App {
     static int chooseship;// indica la posicion de la nave seleccionado en el arreglo de naves
     static double totalFuel;// variable total de combustible para cambiar en el trayecto
     static double totalOxygen;// variable total de oxygeno para cambiar en el trayecto
-    static String end = "██████╗ ███╗   ██╗   ███████║\n" +
-                        "██╔══╗╗ ████╗  ██║╚══██╔══╝ █║\n" +
-                        "██████║ ██╔██╗ ██║   ██║     █║\n" +
-                        "██╔═══╝ ██║╚██╗██║   ██║    █║\n" +
-                        "██║███  ██║ ╚████║   ███████║  \n" +
+    static String end = "███████╗ ███╗   ██╗   ███████║\n" +
+                        "███╔══╗╗ ████╗  ██║╚══██╔══╝ █║\n" +
+                        "███████║ ██╔██╗ ██║   ██║     █║\n" +
+                        "███╔═══╝ ██║╚██╗██║   ██║    █║\n" +
+                        "███║███  ██║ ╚████║   ███████║  \n" +
                         "  ╚═╝     ╚═══╝  ╚═╝   ";
 
     public static void main(String[] args) throws Exception {
@@ -57,8 +57,13 @@ public class App {
                     break;
                 case 6:
                     System.out.println(end);
-                    System.out.println("+=============================+");
-                    System.out.println("| E N D  O f  P R O G R A M ! |");
+                    System.out.println("+==============================+");
+                    System.out.println("| E N D  OF  T H E  T R I P !  |");
+                    System.out.println("|                              |");
+                    System.out.println("| Thank you for your visit!    |");
+                    System.out.println("|                              |");
+                    System.out.println("| E N D  O f  P R O G R A M !! |");
+                    System.out.println("+==============================+");
                     break;
                 default:
                     System.err.println("Invalid option, please, try again");
@@ -340,8 +345,8 @@ public class App {
     //Metodo para imprimir informacion de los planetas
     public static void printPlanetData() {
         
-        System.out.println("| The planet: " + planets[choosePlanet] + "\n| Distance: "
-                + distance[choosePlanet] + "km. " + "\n| Basic information: " + information[choosePlanet]);
+        System.out.println("| THE PLANET: " + planets[choosePlanet] + "\n| DISTANCE: "
+                + distance[choosePlanet] + "KM. " + "\n| BASIC INFORMATION: " + information[choosePlanet]);
     }
     //Metodo para presionar espcacio en cada interaccion 
     public static void pressEnter(Scanner scanner) {
